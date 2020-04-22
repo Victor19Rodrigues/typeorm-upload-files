@@ -25,8 +25,7 @@ export default class CreateTransactions1587567344031
           },
           {
             name: 'type',
-            type: 'enum',
-            enum: ['income', 'outcome'],
+            type: 'varchar',
           },
           {
             name: 'value',
