@@ -44,12 +44,14 @@ class ImportTransactionsService {
 
     const storedTransaction: Transaction[] = [];
 
+    // eslint-disable-next-line no-restricted-syntax
     for (const transaction of importedTransactions) {
-      const newTransaciton = await createTransaction.execute({
+      // eslint-disable-next-line no-await-in-loop
+      const newTransaction = await createTransaction.execute({
         ...transaction,
       });
 
-      storedTransaction.push(newTransaciton);
+      storedTransaction.push(newTransaction);
     }
 
     await fs.promises.unlink(filePath);
