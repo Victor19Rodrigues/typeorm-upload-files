@@ -15,7 +15,8 @@ class TransactionsRepository extends Repository<Transaction> {
       where: { type: 'income' },
     });
     const incomeTotal = transactionsTypeIncome.reduce(
-      (previousValue, currentValue) => previousValue + currentValue.value,
+      (previousValue, currentValue) =>
+        previousValue + Number(currentValue.value),
       0,
     );
 
@@ -23,7 +24,8 @@ class TransactionsRepository extends Repository<Transaction> {
       where: { type: 'outcome' },
     });
     const outcomeTotal = transactionsTypeOutcome.reduce(
-      (previousValue, currentValue) => previousValue + currentValue.value,
+      (previousValue, currentValue) =>
+        previousValue + Number(currentValue.value),
       0,
     );
 
